@@ -1,28 +1,37 @@
 import './TaskCard.css'
 
+import { Link } from 'react-router-dom'
+
 function TaskCard(props) {
 
   return (
 
-    <div className="task-card">
+    <Link
+      to={`/task/${props.task.id}`}
+      className="task-link"
+    >
 
-      <h2>{props.task.titre}</h2>
+      <div className="task-card">
 
-      <p>{props.task.description}</p>
+        <h2>{props.task.titre}</h2>
 
-      <p
-        className={
-          props.task.statut === "A faire"
-            ? "a-faire"
-            : props.task.statut === "En cours"
-            ? "en-cours"
-            : "termine"
-        }
-      >
-        {props.task.statut}
-      </p>
+        <p>{props.task.description}</p>
 
-    </div>
+        <p
+          className={
+            props.task.statut === "A faire"
+              ? "a-faire"
+              : props.task.statut === "En cours"
+              ? "en-cours"
+              : "termine"
+          }
+        >
+          {props.task.statut}
+        </p>
+
+      </div>
+
+    </Link>
 
   )
 }

@@ -1,18 +1,63 @@
-# React + Vite
+# TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de gestion de tâches développée avec React et Vite.js dans le cadre d’un projet scolaire d’apprentissage du développement frontend moderne.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Objectifs pédagogiques
 
-## React Compiler
+Ce projet a pour but de mettre en pratique :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- Vite.js
+- les composants React
+- les Props
+- le State avec `useState`
+- le rendu dynamique avec `map()`
+- les formulaires contrôlés
+- la gestion des événements
+- l’architecture d’un projet React
+- Git et GitHub
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# TD
-# TD
+## Fonctionnalités
+
+L’application permet de :
+
+- afficher une liste de tâches
+- ajouter une nouvelle tâche
+- afficher le statut des tâches
+- gérer dynamiquement l’interface utilisateur
+- styliser les tâches selon leur état
+
+---
+
+## Technologies utilisées
+
+- React.js
+- Vite.js
+- JavaScript
+- JSX
+- CSS
+- Git
+- GitHub
+
+---
+
+## Structure du projet
+
+```bash
+src/
+│
+├── components/
+│   ├── TaskCard.jsx
+│   ├── TaskCard.css
+│   └── TaskForm.jsx
+│
+├── pages/
+│   └── Dashboard.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
