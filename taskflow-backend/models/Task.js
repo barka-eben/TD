@@ -1,0 +1,35 @@
+const mongoose = require('mongoose')
+
+
+const taskSchema = new mongoose.Schema({
+
+  title: {
+
+    type: String,
+
+    required: true,
+
+    maxlength: 100
+
+  },
+
+  description: {
+
+    type: String
+
+  },
+
+  status: {
+
+    type: String,
+
+    enum: ['A faire', 'En cours', 'Terminé'],
+
+    default: 'A faire'
+
+  }
+
+})
+
+
+module.exports = mongoose.model('Task', taskSchema)

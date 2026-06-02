@@ -1,39 +1,53 @@
 import './TaskCard.css'
-
 import { Link } from 'react-router-dom'
 
-function TaskCard(props) {
+function TaskCard({
+  task,
+  onDelete,
+  onUpdateStatus
+}) {
 
   return (
 
-    <Link
-      to={`/task/${props.task.id}`}
-      className="task-link"
-    >
+    <div className="task-card">
 
-      <div className="task-card">
+      <Link
+        to={`/task/${task._id}`}
+        className="task-link"
+      >
 
-        <h2>{props.task.titre}</h2>
+        <h2>{task.title}</h2>
 
-        <p>{props.task.description}</p>
+        <p>{task.description}</p>
 
-        <p
-          className={
-            props.task.statut === "A faire"
-              ? "a-faire"
-              : props.task.statut === "En cours"
-              ? "en-cours"
-              : "termine"
-          }
-        >
-          {props.task.statut}
-        </p>
+      </Link>
 
-      </div>
+      <select
+        value={task.status}
+        onChange={(e) =>
+          onUpdateStatus(
+            task._id,
+            e.target.value
+          )
+        }
+      >
 
-    </Link>
+        <option>A faire</option>
+        <option>En cours</option>
+        <option>Terminé</option>
+
+      </select>
+
+      <button
+        onClick={() => onDelete(task._id)}
+      >
+        Supprimer
+      </button>
+
+    </div>
 
   )
+
 }
 
 export default TaskCard

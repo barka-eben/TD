@@ -1,31 +1,28 @@
 import { useState } from 'react'
 
-function TaskForm(props) {
+function TaskForm({ onAddTask }) {
 
-  const [titre, setTitre] = useState('')
+  const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [statut, setStatut] = useState('A faire')
-
+  const [status, setStatus] = useState('A faire')
 
   const handleSubmit = (e) => {
 
     e.preventDefault()
 
     const nouvelleTache = {
-      id: Date.now(),
-      titre,
+      title,
       description,
-      statut
+      status
     }
 
-    props.onAddTask(nouvelleTache)
+    onAddTask(nouvelleTache)
 
-    setTitre('')
+    setTitle('')
     setDescription('')
-    setStatut('A faire')
+    setStatus('A faire')
 
   }
-
 
   return (
 
@@ -34,29 +31,24 @@ function TaskForm(props) {
       <input
         type="text"
         placeholder="Titre"
-        value={titre}
-        onChange={(e) => setTitre(e.target.value)}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
-
 
       <textarea
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-      ></textarea>
-
+      />
 
       <select
-        value={statut}
-        onChange={(e) => setStatut(e.target.value)}
+        value={status}
+        onChange={(e) => setStatus(e.target.value)}
       >
-
         <option>A faire</option>
         <option>En cours</option>
         <option>Terminé</option>
-
       </select>
-
 
       <button type="submit">
         Ajouter
@@ -65,6 +57,7 @@ function TaskForm(props) {
     </form>
 
   )
+
 }
 
 export default TaskForm
